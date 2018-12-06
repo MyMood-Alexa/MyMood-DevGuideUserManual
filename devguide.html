@@ -1,211 +1,225 @@
 <!DOCTYPE HTML>
 <!--
-	Theory by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+  Theory by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-	<head>
-		<title>My Mood Dev Guide</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="subpage">
+  <head>
+    <title>My Mood Dev Guide</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="subpage">
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="home.html" class="logo">My Mood</a>
-					<nav id="nav">
-						<a href="home.html">Home</a>
-						<a href="usermanual.html">User Manual</a>
-						<a href="devguide.html">Developer Guidelines</a>
-					</nav>
-					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-				</div>
-			</header>
+    <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <a href="home.html" class="logo">My Mood</a>
+          <nav id="nav">
+            <a href="home.html">Home</a>
+            <a href="usermanual.html">User Manual</a>
+            <a href="devguide.html">Developer Guidelines</a>
+          </nav>
+          <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        </div>
+      </header>
 
-		<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="inner">
-					<header class="align-center">
-						<h2>My Mood </h2>
-						<p>Developer's Guide</p>
-					</header>
+    <!-- Main -->
+      <section id="main" class="wrapper">
+        <div class="inner">
+          <header class="align-center">
+            <h2>My Mood </h2>
+            <p>Developer's Guide</p>
+          </header>
 
-				<!-- Content -->
-					<h2 id="content">Project Details</h2>
-					<p> My Mood is an interactive Alexa application that a user can talk about their mood with.
-						The goal of this application is to improve, assess, and get help for the user's mental state.
-					</p>
-							<h3>Features</h3>
-								MyMood has three main features:<br><br>
-							<ul>
-								<li> Converse with the user to alleviate depression.
-									<ul>
-									<li> Activated with the Intent trigger "talk about my day".
-									<li> Runs the user input through a machine learning model to compute the sentiment.
-									<li> Reconfirms computed sentiment analysis with user.
-									<li> Provide suggestions or tips if appropriate.
-									</ul>
-									</li>
-								<li> Diagnose the user for depression with a series of questions.
-									<ul>
-									<li> Activated with the Intent trigger "take an assessment".
-									<li> Questions are based off of the Diagnostic and Statistical Manual of Mental Disorders, 4th Edition.
-									<li> Computes using a decision tree constructed based on the "Differential Diagnosis of Mood Disorders" from the manual above.
-									</ul>
-									</li>
-								<li> Locate a nearby clinic using the set Alexa location in conjunction with Google Places API.
-									<ul>
-									<li> Activated with the Intent trigger "look for professional help".
-									<li> Sends a get request to the <a target="_blank" href="https://developer.amazon.com/docs/custom-skills/device-address-api.html">Amazon Device Address API</a> if the user has granted authorization.
-									<li> Uses the location obtained to retrieve the details of a nearby mental health institute by issuing a series of get requests to <a target="_blank" href="https://developers.google.com/places/">Google Places API</a>.
-									</ul>
-									</li>
-							</ul>
-							<h3>Components</h3>
-								<img src="images/CompFig.jpg" alt="ComponentsFigure" class="center">
-								<p class="align-center"> Components Overview Figure</p>
-								
-								The following is a list of components relevant to MyMood:
-								<ul>
-									<li><a target="_blank" href="https://www.python.org/downloads/">Python 3</a> - General purpose programming language with well maintained machine learning libraries.</li>
-									<li><a target="_blank" href="http://flask-ask.readthedocs.io/en/latest/">Flask-Ask</a> - A flask extension to create Alexa skills using Python to streamline the development process.</li>
-									<li><a target="_blank" href="https://www.amazon.com/Amazon-Echo-And-Alexa-Devices/b?ie=UTF8&node=9818047011">Amazon Echo</a> - Hardware device also known as Amazon Alexa. The target platform that this application will run on.</li>
-									<li><a target="_blank" href="https://developer.amazon.com/alexa-skills-kit">Alexa Skills Kit</a> - API used to create Alexa skills by handling the properties of the skill. </li>
-									<li><a target="_blank" href="https://aws.amazon.com/">Amazon Web Services</a> - Provides on-demand cloud computing platforms such as Lambda and DynamoDB.</li>
-									<li><a target="_blank" href="https://aws.amazon.com/lambda/">Amazon Lambda</a> - Event-driven server-less computing platform used by Alexa skills. It is also used for machine learning model computing.</li>
-									<li><a target="_blank" href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB</a> - A NoSQL database service managed on the cloud. Used to gather anonymous interactions as data for researchers and system improvement.</li>
-									<li><a target="_blank" href="https://developers.google.com/places/">Google Places API</a> - Provides local clinic information based on the user's location.</li>
-								</ul>
-							<h3>On-Boarding Guide</h3>
-								<h4>Development Team Guidelines</h4>
-									Scrum Process
-									<ul>
-										<li> Issues are tracked on <a target="_blank" href="https://waffle.io/lydarren/MyMood">Waffle.io</a>.</li>
-										<li> Sprints start Tuesday morning and end Monday night.</li>
-										<li> Developers should attempt to have their tasks completed by Saturday and address feedback by Monday night.</li>
-									</ul>
-									Developer Guidelines
-									<ul>
-										<li>There are 3 repositories total:
-											<a target="_blank" href="https://github.com/MyMood-Alexa/MyMood-DevGuideUserManual">Dev Guide & User Manual</a>, 
-											<a target="_blank" href="https://github.com/MyMood-Alexa/MyMood-Interface">Database Interface</a>, and
-											<a target="_blank" href="https://github.com/MyMood-Alexa/MyMood">Alexa App</a>.
-										</li>
-										<li> Python code should follow the <a target="_blank" href="https://www.python.org/dev/peps/pep-0008/">PEP8 style</a>. 
-											Use <a target="_blank" href="http://pep8online.com/">PEP8 online tool</a> if unsure.</li>
-										<li> Code should be tested before issuing a pull request.</li>
-										<li> Code needs to be reviewed and receive the approval of 2 other developers before being accepted by the project manager.</li>
-										<li> There should be 1 commit per task, even if changes were made in response to feedback. This makes issue tracking and bug fixing a lot easier.
-											<br> E.g. If the task is to add a button to the interface, there should only be 1 commit for it in the commit tree.
-											<br><br> Helpful commands:
-											<br> Use 'git commit --amend --no-edit' to apply your changes to your topmost commit.
-											<br> Use 'git pull --rebase' to get the latest source code while putting your commits on top.
-											<br> Use 'git rebase -i' to make changes to a previous commit.
-										</li>
-									</ul>
-								<h4>Environment Setup Instructions</h4>
-									Python Environment
-									<ol>
-										<li> Download and Install <a target="_blank" href="https://www.anaconda.com/download/">Anaconda and Spyder</a>.</li>
-										<li> Using the Anaconda Prompt:
-											<br>Check that Python 3.x is installed with 'python --version'.
-											<br>Use 'conda install python=3.6' and 'conda update python' if it isn't.
-											<br>Install Flask-Ask framework with 'conda install -c anaconda flask' on the Anaconda Prompt.</li>
-									</ol>
-									DynamoDB
-									<ol>
-										<li> Follow instructions to set up  
-										<a target="_blank" href="https://docs.aws.amazon.com/lambda/latest/dg/setup-awscli.html">AWS CLI</a>.</li>
-										<li> Follow instructions to configure  
-										<a target="_blank" href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html">boto3</a>.</li>
-										<li> Run create_table() from database.py</li>
-									</ol>
-									Google Places API
-									<ol>
-										<li> For local testing, get a Google Places API key  
-										<a target="_blank" href="https://developers.google.com/places/web-service/get-api-key">here</a>.</li>
-										<li> Create a config file in your local mymood repository named 'config.py'</li>
-										<li> Insert your API key in config.py as API_KEY='YOUR_KEY'</li>
-									</ol>
-									Local Testing
-									<ol>
-										<li> Download <a target="_blank" href="https://ngrok.com/download">ngrok</a>.</li>
-										<li> Run main.py on Spyder.</li>
-										<li> Without stopping main.py, run ngrok.exe and enter 'ngrok http 5000'.</li>
-										<li> Copy the forwarding endpoint, which looks something like 'https://4986f389.ngrok.io'. 
-										Make sure it's the https endpoint.</li>
-										<li> Go to Alexa Developer Console and under Build > Endpoint, paste the ngrok https endpoint in default region. 
-										Select 'My development endpoint is a subdomain of a domain...' and click 'Save Endpoints'.</li>
-										<img src="images/LocalTestingEndpt.jpg" alt="NgrokEndpoint" class="center">
-										<li> Test through the Developer Console or with your Alexa.</li>
-										<li> Terminate main.py and ngrok when you have finished testing.</li>
-									</ol>
-							<h3>Contribute</h3>
-							Contributors are always welcome! Here's how you can help:
-							<br>
-							<ul>
-								<li> Maintainers should fork the latest source code to their GitHub repository and submit pull requests.
-								<ul>
-									<li> The "master" branch contains the most up-to-date source code, 
-									which can be found <a target="_blank" href="https://github.com/lydarren/MyMood">here</a>.</li>
-									<li> Development should be done in the "dev" branch.</li>
-								</ul>
-								</li>
-								<li> If any issues are found, please report or fix them.
-								<ul>
-									<li> A list of issues can be found <a target="_blank" href="https://github.com/lydarren/MyMood/issues">here</a>.</li>
-								</ul>
-								</li>
-								<li> Data is always welcome to improve the machine learning model.
-								<ul>
-									<li> Textual data with labeled sentiment is preferred.</li>
-									<li> Submit compiled data to mymood491@gmail.com.</li>
-								</ul>
-								</li>
-							</ul>
-							<h3>FAQ</h3>
-							<b>Q:</b> How can I contribute to this application?<br>
-							<tab1><b>A:</b> You can contribute by discovering or fixing issues.</tab1><br>
-							<b>Q:</b> How do I fork the project to my repository?<br>
-							<tab1><b>A:</b> Navigate <a target="_blank" href="https://github.com/lydarren/MyMood">here</a> and click "Fork" on the top-right.</tab1><br>
-							<tab1><img src="images/fork.jpg" alt="GitHub Fork" /></tab1><br>
-							<b>Q:</b> Why did the developers opt for Python instead of utilizing Node.js?<br>
-							<tab1><b>A:</b> The developers are comfortable with Python and Flask-Ask trivializes source code maintenance.</tab1><br>
-							<tab1>Most importantly, Python grants access to useful machine learning frameworks.</tab1><br>
-							<b>Q:</b> How often is the application deployed?<br>
-							<tab1><b>A:</b> When all planned major features has been completed and is sufficiently bug-free, a "blessed" commit is marked with a version number and deployed</tab1><br>
+        <!-- Content -->
+          <h2 id="content">Project Details</h2>
+          <p> My Mood is an interactive Alexa application that a user can talk about their day with.
+            The goal of this application is to improve, assess, and get help for the user's mental state.
+          </p>
+              <h3>Features</h3>
+                MyMood has three main features:<br><br>
+              <ul>
+                <li>Converse with the user to alleviate depression.</li>
+                  <ul>
+                    <li>Activated with the Intent trigger "Today". Ex: Today, it's my birthday.</li>
+                    <li>Currently passes the input to a Naive-Bayes classifier to determine the sentiment. Classifier is trained with data set provided by <a target="_blank" href="http://help.sentiment140.com/for-students">Sentiment140</a></li>
+                    <li>MyMood will respond with congratulatory or sympathetic statement based on classification.</li>
+                  </ul>
+                <li> Diagnose the user for depression with a series of questions.
+                  <ul>
+                    <li>Activated with the Intent trigger "take an assessment".</li>
+                    <li>Questions are based off of the Diagnostic and Statistical Manual of Mental Disorders, 4th Edition.</li>
+                    <li>Computes using a codified decision tree constructed based on the "Differential Diagnosis of Mood Disorders" from the manual above.</li>
+                  </ul>
+                <li> Locate a nearby clinic using the set Alexa location in conjunction with Google Places API.
+                  <ul>
+                    <li>Activated with the Intent trigger "look for professional help".</li>
+                    <li>Sends a get request to the <a target="_blank" href="https://developer.amazon.com/docs/custom-skills/device-address-api.html">Amazon Device Address API</a> if the user has granted authorization.</li>
+                    <li>Uses the location obtained to retrieve the details of a nearby mental health institute by issuing a series of get requests to <a target="_blank" href="https://developers.google.com/places/">Google Places API</a>.</li>
+                  </ul>
+              </ul>
+              <h3>Components</h3>
+                <img src="https://drive.google.com/uc?export=view&id=1oDAHkM4pLZJn5z0aW71tEY96WwmWjvTW" alt="ComponentsFigure" class="center">
+                <p class="align-center"> Components Overview Figure</p>
+                
+                The following is a list of components relevant to MyMood:
+                <ul>
+                  <li><a target="_blank" href="https://www.python.org/downloads/">Python 3</a> - General purpose programming language with well maintained machine learning libraries.</li>
+                  <li><a target="_blank" href="http://flask-ask.readthedocs.io/en/latest/">Flask-Ask</a> - A flask extension to create Alexa skills using Python to streamline the development process.</li>
+                  <li><a target="_blank" href="https://www.amazon.com/Amazon-Echo-And-Alexa-Devices/b?ie=UTF8&node=9818047011">Amazon Echo</a> - Hardware device also known as Amazon Alexa. The target platform that this application will run on.</li>
+                  <li><a target="_blank" href="https://developer.amazon.com/alexa-skills-kit">Alexa Skills Kit</a> - API used to create Alexa skills by handling the properties of the skill. </li>
+                  <li><a target="_blank" href="https://aws.amazon.com/">Amazon Web Services</a> - Provides on-demand cloud computing platforms such as Lambda and DynamoDB.</li>
+                  <li><a target="_blank" href="https://aws.amazon.com/ec2/">Amazon EC2</a> - Provides a virtual computing environment to host our web server.</li>
+                  <li><a target="_blank" href="https://aws.amazon.com/lambda/">Amazon Lambda</a> - Event-driven server-less computing platform used by Alexa skills. It is also used for machine learning model computing.</li>
+                  <li><a target="_blank" href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB</a> - A NoSQL database service managed on the cloud. Used to gather anonymous interactions as data for researchers and system improvement.</li>
+                  <li><a target="_blank" href="https://developers.google.com/places/">Google Places API</a> - Provides local clinic information based on the user's location.</li>
+                </ul>
+              <h3>On-Boarding Guide</h3>
+                <h4>Development Team Guidelines</h4>
+                  Scrum Process
+                  <ul>
+                    <li>Issues are tracked on <a target="_blank" href="https://waffle.io/MyMood-Alexa/MyMood">Waffle.io</a>.</li>
+                    <li>Sprints start Tuesday morning and end Monday night.</li>
+                    <li>Developers should attempt to have their tasks completed by Saturday and address feedback by Monday night.</li>
+                  </ul>
+                  Developer Guidelines
+                  <ul>
+                    <li>There are 3 repositories total:
+                      <a target="_blank" href="https://github.com/MyMood-Alexa/MyMood-DevGuideUserManual">Dev Guide &amp; User Manual</a>, 
+                      <a target="_blank" href="https://github.com/MyMood-Alexa/MyMood-Interface">Database Interface</a>, and
+                      <a target="_blank" href="https://github.com/MyMood-Alexa/MyMood">Alexa App</a>.
+                    </li>
+                    <li>Python code should follow the <a target="_blank" href="https://www.python.org/dev/peps/pep-0008/">PEP8 style</a>. 
+                      Use <a target="_blank" href="http://pep8online.com/">PEP8 online tool</a> if unsure.</li>
+                    <li><a target="_blank" href="https://mymood.me/">Interface</a> code runs on HTML, CSS, and JavaScript. They should follow these conventions:<br>
+                      <a target="_blank" href="https://www.w3schools.com/html/html5_syntax.asp">HTML</a><br>
+                      <a target="_blank" href="https://google.github.io/styleguide/htmlcssguide.html">HTML/CSS</a><br>
+                      <a target="_blank" href="https://www.w3schools.com/js/js_conventions.asp">JavaScript</a><br>
+                      One exception is that we prefer<br>
+<pre><code>if(...) {
+  ...
+}
+else {
+  ...
+}</code></pre>
+                      over
+<pre><code>if(...) {
+  ...
+} else {
+  ...
+}</code></pre>
+                    </li>
+                    <li>Code should be tested with proof (screenshot, gif) before issuing a pull request.</li>
+                    <li>Code needs to be reviewed and receive the approval of 2 other developers before being accepted by the project manager.</li>
+                    <li>There should be 1 commit per task, even if changes were made in response to feedback. This makes issue tracking and bug fixing a lot easier.
+                      <br> E.g. If the task is to add a button to the interface, there should only be 1 commit for it in the commit tree.
+                    </li>
+                  </ul>
+                <h4>Environment Setup Instructions</h4>
+                  Python Environment
+                  <ol>
+                    <li>Download and Install <a target="_blank" href="https://www.anaconda.com/download/">Anaconda and Spyder</a>.</li>
+                    <li>Using the Anaconda Prompt:
+                      <br>Check that Python 3.x is installed with 'python --version'.
+                      <br>Use 'conda install python=3.6' and 'conda update python' if it isn't.
+                      <br>Install Flask-Ask framework with 'conda install -c anaconda flask' on the Anaconda Prompt.
+                    </li>
+                  </ol>
+                  DynamoDB
+                  <ol>
+                    <li>Follow instructions to set up  
+                    <a target="_blank" href="https://docs.aws.amazon.com/lambda/latest/dg/setup-awscli.html">AWS CLI</a>.</li>
+                    <li>Follow instructions to configure  
+                    <a target="_blank" href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html">boto3</a>.</li>
+                    <li>Run create_table() from database.py</li>
+                  </ol>
+                  Google Places API
+                  <ol>
+                    <li>For local testing, get a Google Places API key  
+                    <a target="_blank" href="https://developers.google.com/places/web-service/get-api-key">here</a>.</li>
+                    <li>Create a config file in your local mymood repository named 'config.py'</li>
+                    <li>Insert your API key in config.py as API_KEY='YOUR_KEY'</li>
+                  </ol>
+                  Local Testing
+                  <ol>
+                    <li>Download <a target="_blank" href="https://ngrok.com/download">ngrok</a>.</li>
+                    <li>Run main.py on Spyder.</li>
+                    <li>Without stopping main.py, run ngrok.exe and enter 'ngrok http 5000'.</li>
+                    <li>Copy the forwarding endpoint, which looks something like 'https://4986f389.ngrok.io'. 
+                    Make sure it's the https endpoint.</li>
+                    <li>Go to Alexa Developer Console and under Build > Endpoint, paste the ngrok https endpoint in default region. 
+                    Select 'My development endpoint is a subdomain of a domain...' and click 'Save Endpoints'.</li>
+                    <img src="images/LocalTestingEndpt.jpg" alt="NgrokEndpoint" class="center">
+                    <li>Test through the Developer Console or with your Alexa.</li>
+                    <li>Terminate main.py and ngrok when you have finished testing.</li>
+                  </ol>
+              <h3>Useful GitHub Commands</h3>
+              <h4>Setting Up the Local Repository</h4>
+              <ol>
+                <li>Fork organization's master repository found <a target="_blank" href="https://github.com/MyMood-Alexa/MyMood">here</a> to your own GitHub.</li>
+                <li><code>git clone https://github.com/&lt;your_github_id&gt;/MyMood</code></li>
+                <li><code>git remote -v</code> should show 2 origin links</li>
+                <li><code>git remote add upstream https://github.com/MyMood-Alexa/MyMood</code></li>
+                <li><code>git remote -v</code> should show 2 origin links and 2 upstream links</li>
+              </ol>
+              <h4>Pull Request Workflow</h4>
+              <ol>
+                <li><code>git commit -m "&lt;waffle_issue_header&gt;"</code> to add your changes to a commit, or <code>git commit --amend --no-edit</code> to amend your topmost commit without adding another commit. Use <code>git rebase -i</code> to correct an even older commit.</li>
+                <li><code>git pull --rebase upstream master</code> to get the latest source code from the master repository while putting your commits on top</li>
+                <li><code>git push</code> to push to your forked repository, or <code>git push upstream &lt;your_local_branch&gt;:&lt;remote_branch&gt;</code> to push to your branch on the master repository</li>
+                <li>
+                  Submit pull request:<br>
+                  &emsp; &bull; If needed to fulfill a subtask: Add "required by #&lt;issue_number&gt;" to pull review description<br>
+                  &emsp; &bull; If needed to fix a bug: Add "closes #&lt;issue_number&gt;" to pull review description<br>
+                  &emsp; &bull; Attach testing screenshots to your pull review description
+                </li>
+                <li>Address any feedback regarding regarding your pull request and retest if needed. When your pull review has received at least 2 approvals, it can be rebased and merged</li>
+              </ol>
+              <h3>Waffle management</h3>
+              <ul>
+                <li>Epics should have &lt;feature_abbreviation-milestone_number&gt; tags Ex: Sentiment Analysis Milestone 1 would look like this: [SA-1]</li>
+                <li>To add subtask to an epic, add "child of #&lt;epic_issue_number&gt;" and "connects #&lt;epic_issue_number&gt;" to the subtask description</li>
+              </ul>
+              <h3>FAQ</h3>
+              <b>Q:</b> How can I contribute to this application?<br>
+              &emsp;<b>A:</b> You can contribute by discovering or fixing issues.<br>
+              <b>Q:</b> How do I fork the project to my repository?<br>
+              &emsp;<b>A:</b> Navigate <a target="_blank" href="https://github.com/MyMood-Alexa/MyMood">here</a> and click "Fork" on the top-right.<br>
+              &emsp;<img src="images/fork.jpg" alt="GitHub Fork" /><br>
+              <b>Q:</b> Why did the developers opt for Python instead of utilizing Node.js?<br>
+              &emsp;<b>A:</b> The developers are comfortable with Python and Flask-Ask trivializes source code maintenance.<br>
+              &emsp;Most importantly, Python grants access to useful machine learning frameworks.<br>
+              <b>Q:</b> How often is the application deployed?<br>
+              &emsp;<b>A:</b> When all planned major features has been completed and is sufficiently bug-free, a "blessed" commit is marked with a version number and deployed<br>
 
-							<br>
-							<br>
-							<h3> Support</h3>
-							<p>
-							For any issues on the application, please contact us.
-							<br><b>Email:</b> mymood491@gmail.com</p>
-						</div>
-					</div>
+              <br>
+              <br>
+              <h3>Support</h3>
+              <p>For any issues on the application, please contact us.
+              <br><b>Email:</b> mymood491@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-				</div>
-			</section>
+    <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <div class="flex">
+            <div class="copyright">
+              &copy; Design Template: <a href="https://templated.co">TEMPLATED</a>.
+          </div>
+        </div>
+      </footer>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<div class="flex">
-						<div class="copyright">
-							&copy; Design Template: <a href="https://templated.co">TEMPLATED</a>.
-					</div>
-				</div>
-			</footer>
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <script src="assets/js/main.js"></script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+  </body>
 </html>

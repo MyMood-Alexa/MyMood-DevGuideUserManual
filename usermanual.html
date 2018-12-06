@@ -1,130 +1,170 @@
 <!DOCTYPE HTML>
 <!--
-	Theory by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+  Theory by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-	<head>
-		<title>My Mood User Manual</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="subpage">
+  <head>
+    <title>My Mood User Manual</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="subpage">
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="home.html" class="logo">My Mood</a>
-					<nav id="nav">
-						<a href="home.html">Home</a>
-						<a href="usermanual.html">User Manual</a>
-						<a href="devguide.html">Developer Guidelines</a>
-					</nav>
-					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-				</div>
-			</header>
+    <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <a href="home.html" class="logo">My Mood</a>
+          <nav id="nav">
+            <a href="home.html">Home</a>
+            <a href="usermanual.html">User Manual</a>
+            <a href="devguide.html">Developer Guidelines</a>
+          </nav>
+          <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        </div>
+      </header>
 
-		<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="inner">
-					<header class="align-center">
-						<h2>My Mood </h2>
-						<p>User Manual</p>
-					</header>
+    <!-- Main -->
+      <section id="main" class="wrapper">
+        <div class="inner">
+          <header class="align-center">
+            <h2>My Mood Alexa Application</h2>
+            <p>User Manual</p>
+          </header>
 
-				<!-- Content -->
-					<h2 id="content">System Purpose</h2>
-					<p> My Mood is an interactive Alexa application that would improve, assess, and get help for the user's mental state.
-						<br><br>Depression not only has an impact on the individual person, it also has a great impact on the society around them.
-						Unfortunately, depressed individuals tend to have limited knowledge and access to resources regarding their disorder.
-						<br><br>The system provides tools for potentially depressed users, including:
-							<ol>
-									<li> Depression alleviation through conversation
-									<li> Mental health diagnosis by taking an assessment
-									<li> Location-based suggestion for professional help
-							</ol>
-						In addition, collected data from willing users are sent to UCLA for research.
-						<br><br>The ultimate goal of the system is to give depressed users a coping mechanism through conversation, and to give them more knowledge of the available resources that can help them.
-						Submitted research data would be towards a good cause and simultaneously improve the system.
-						By doing so, we hope users will become more aware of their depression by encouraging them be more proactive in curing their depression.
-					</p>
-							<h3>Installation</h3>				
-							<ol>
-									<li> Make sure your Amazon Echo is linked to your Amazon account.
-									<li> Sign in to your Amazon account on a web browser.
-									<li> <!-- Placeholder skill, need to publish skill to show up on the page-->
-										<a target="_blank" href="https://www.amazon.com/alexa-skills/b/ref=skillsrw_surl?ie=UTF8&node=13727921011"> Navigate to the Alexa Skills page here.</a></li>
-									<li> Search for "My Mood" in the search bar <br/> <img src="images/search1.jpg" alt="My Mood Search" />
-									<li> Select "My Mood", which opens the skill detail page
-									<li> Click the "Enable" option  <br/> <img src="images/getskill.jpg" alt="Enable Skill" />
-									<li> Access skill by using the keyword "Open My Mood" on the Amazon Echo.
-								</ol> 
-						<!-- Break -->
-							<h3>How to activate each feature</h3>
-							MyMood has three main features:<br><br>
-							<ul>
-								<li> To converse with Alexa, say, "Alexa, ask <b>My Mood</b> to <b>talk about my day</b>."
-									<ul>
-									<li> Give a short summary of your day.
-									<li> MyMood will confirm it has correctly understood how your day has been going and provide suggestions if appropriate.
-									</ul>
-									</li>
-								<li> To have Alexa assess your mental health, say, "Alexa, ask <b>My Mood</b> to <b>take an assessment</b>."
-									<ul>
-									<li> Follow assessment directions and answer questions with "yes" or "no".
-									<li> Upon completion of the assessment, MyMood will give you a possible diagnosis for your condition.
-									</ul>
-									</li>
-								<li> To request for nearby professional help, say, "Alexa, ask <b>My Mood</b> to <b>look for professional help</b>."
-									<ul>
-									<li> To ensure proper functionality, enable location accessing permissions on your Alexa.
-									<li> MyMood will locate a nearby mental health institute and provide their information based the location set on your Alexa.
-									</ul>
-									</li>
-							</ul>
-							
-							<h3>FAQ</h3>
-							<b>Q:</b> Why does Alexa sometimes take long to respond?<br>
-							<tab1><b>A:</b> It did not hear you or it is processing the response.</tab1><br>
+        <!-- Content -->
+          <h2 id="content">System Purpose</h2>
+          <p> My Mood is an interactive Alexa application that a user can talk about their day with. The goal of this application is to improve, assess, and get help for the user's mental state.
+            <br><br>Depression not only has an impact on the individual person, it also has a great impact on the society around them.
+            Unfortunately, depressed individuals tend to have limited knowledge and access to resources regarding their disorder.
+            <br><br>The system provides tools for potentially depressed users, including:
+              <ol>
+                <li>Depression alleviation by telling Alexa about their day</li>
+                <li>Mental health diagnosis by taking an assessment based on the Diagnostic and Statistical Manual of Mental Disorders</li>
+                <li>Location-based suggestion for professional help</li>
+              </ol>
+            The ultimate goal of the system is to give users more knowledge of the available resources that can help their mental state.
+            Submitted research data would be towards a good cause and simultaneously improve the system.
+            By doing so, we hope users will become more aware of their depression by encouraging them be more proactive in curing their depression.
+          </p>
+              <h3>Installation</h3>
+              <ol>
+                  <li>Make sure your Amazon Echo is linked to your Amazon account.</li>
+                  <li>Sign in to your Amazon account on a web browser.</li>
+                  <li> <!-- Placeholder skill, need to publish skill to show up on the page-->
+                    <a target="_blank" href="https://www.amazon.com/alexa-skills/b/ref=skillsrw_surl?ie=UTF8&node=13727921011"> Navigate to the Alexa Skills page here.</a></li>
+                  <li>Search for "My Mood" in the search bar <br/> <img src="images/search1.jpg" alt="My Mood Search" /></li>
+                  <li>Select "My Mood", which opens the skill detail page</li>
+                  <li>Click the "Enable" option  <br/> <img src="images/getskill.jpg" alt="Enable Skill" /></li>
+                  <li>Access skill by using the keyword "Open My Mood" on the Amazon Echo.</li>
+                </ol> 
+            <!-- Break -->
+              <h3>How to activate each feature</h3>
+              MyMood has three main features:<br>
+              To open <b>My Mood</b>, say "Alexa, open my mood."
+              <ol>
+              <li>To converse with Alexa, start with the keyword <b>Today</b>. Ex: "<b>Today</b>, it's my birthday."</li>
+                <ul>
+                  <li>MyMood will respond with congratulatory or sympathetic statement based on classification.</li>
+                </ul>
+              <li>To have Alexa assess your mental health, say, "Alexa, ask <b>My Mood</b> to <b>take an assessment</b>."</li>
+                <ul>
+                  <li>Follow assessment directions and answer questions with "yes" or "no".</li>
+                  <li>Upon completion of the assessment, MyMood will give you a possible diagnosis for your condition.</li>
+                </ul>
+              <li>To request information about nearby professional help, say, "Alexa, ask <b>My Mood</b> to <b>look for professional help</b>."</li>
+                <ul>
+                  <li>To ensure proper functionality, enable location accessing permissions on your Alexa.</li>
+                  <li>MyMood will locate a nearby mental health institute and provide their information based the location set on your Alexa.</li>
+                </ul>
+              </ol>
+              <ul>
+                <li>To hear your options, say "help".</li>
+                <li>To repeat what Alexa said, say "repeat that".</li>
+                <li>To stop Alexa, say "Alexa, stop".</li>
+              </ul>
+              
+              <h3>MyMood Application FAQ</h3>
+              <b>Q:</b> Why does Alexa sometimes take long to respond?<br>
+              &emsp;<b>A:</b> It did not hear you or it is processing the response.<br>
 
-							<b>Q:</b> Alexa diagnosed me with a very secure case of depression, but I don't think it's right.<br>
-							<tab1><b>A:</b> The system is not a sure measure for depression. See a mental health professional to be sure.</tab1><br>
+              <b>Q:</b> Why does Alexa shut off midway?<br>
+              &emsp;<b>A:</b> Alexa requires you to respond within 8 seconds.<br>
+        
+              <b>Q:</b> Why does Alexa sometimes respond sympathetic to a positive statement or vice versa?<br>
+              &emsp;<b>A:</b> The machine learning model's accuracy is not perfect.<br>
+        
+              <b>Q:</b> Alexa diagnosed me with a very secure case of depression, but I don't think it's right.<br>
+              &emsp;<b>A:</b> The system is not a sure measure for depression. See a mental health professional to be sure.<br>
 
-							<b>Q:</b> Alexa is not getting my location.<br>
-							<tab1><b>A:</b> Make sure it is connected to the internet and location accessing permissions are enabled.</tab1><br>
+              <b>Q:</b> Alexa is not getting my location.<br>
+              &emsp;<b>A:</b> Make sure it is connected to the internet and location accessing permissions are enabled.<br>
 
-							<b>Q:</b> I have a problem not mentioned here.<br>
-							<tab1><b>A:</b> Email us at mymood491@gmail.com</tab1><br>
-							<br>
-							<br>
-							
-							<h3> Support</h3>
-							<p>
-							For any issues on the application, please contact us.
-							<br><b>Email:</b> mymood491@gmail.com</p>
-						</div>
-					</div>
+              <b>Q:</b> I have a problem not mentioned here.<br>
+              &emsp;<b>A:</b> Email us at mymood491@gmail.com<br>
+              <br>
+              <br>
+              
+              <header class="align-center">
+                <h2>My Mood Database Interface</h2>
+              </header>
+              
+              <h2>How to Use Our Database</h2>
+              <p>
+                <ol>
+                  <li>Login to our database with valid credentials.</li>
+                  <li>Having granted access, you can view a table of available shared sessions between users.<br>
+                    &emsp; &bull; If you have trouble finding specific information, use the search bar and filter options to search for a specific session, user, time, or word in a response.</li>
+                  <li>To view a session's responses, click on the row of that session that you wish to view.</li>
+                  <li>Viewing a session will provide the responses of the user throughout the session.</li>
+                </ol>
+              </p>
+    
+              <h3>Attributes</h3>
+              <p>
+                <b>Session ID:</b> Identifier that uniquely identifies the session between the user and Alexa.<br>
+                <b>User ID:</b> Identifier that uniquely identifies the user for a specific session.<br>
+                <b>Response:</b> The statement recorded by the user or Alexa.<br>
+                <b>Time:</b> The time that was recorded when a user started a session.
+              </p>
+    
+              <h3>MyMood Database Interface FAQ</h3>
+              <p>
+                <b>Q:</b> I forgot my username/password. How can I receive my account information?<br>
+                &emsp; <b>A:</b> To receive your account information, contact us providing your registered email. 
+                If the email is valid, the account information will be directly sent to you.<br>
+                <b>Q:</b> How frequently is the database updated?<br>
+                &emsp; <b>A:</b> The database will be updated every Monday at Midnight.<br>
+                <b>Q:</b> What can I do with this JSON file that I downloaded?<br>
+                &emsp; <b>A:</b> This file is for your own benefit. 
+                You can simply use this file to save the session information or share these sessions with others.<br>
+              </p>
+    
+              <h3> Support</h3>
+              <p>For any issues on the application or database interface, please contact us.
+              <br><b>Email:</b> mymood491@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-				</div>
-			</section>
+    <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <div class="flex">
+            <div class="copyright">
+              &copy; Design Template: <a href="https://templated.co">TEMPLATED</a>.
+          </div>
+        </div>
+      </footer>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<div class="flex">
-						<div class="copyright">
-							&copy; Design Template: <a href="https://templated.co">TEMPLATED</a>.
-					</div>
-				</div>
-			</footer>
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <script src="assets/js/main.js"></script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+  </body>
 </html>
